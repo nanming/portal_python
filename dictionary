@@ -1,0 +1,48 @@
+#
+# Version $Id: dictionary,v 1.1.1.1 2002/10/11 12:25:39 wichert Exp $
+#
+#	This file contains dictionary translations for parsing
+#	requests and generating responses.  All transactions are
+#	composed of Attribute/Value Pairs.  The value of each attribute
+#	is specified as one of 4 data types.  Valid data types are:
+#
+#	string  - 0-253 octets
+#	ipaddr  - 4 octets in network byte order
+#	integer - 32 bit value in big endian order (high byte first)
+#	date    - 32 bit value in big endian order - seconds since
+#					00:00:00 GMT,  Jan.  1,  1970
+#
+#	FreeRADIUS includes extended data types which are not defined
+#	in RFC 2865 or RFC 2866.  These data types are:
+#
+#	abinary - Ascend's binary filter format.
+#	octets  - raw octets, printed and input as hex strings.
+#		  e.g.: 0x123456789abcdef
+#
+#
+#	Enumerated values are stored in the user file with dictionary
+#	VALUE translations for easy administration.
+#
+#	Example:
+#
+#	ATTRIBUTE	  VALUE
+#	---------------   -----
+#	Framed-Protocol = PPP
+#	7		= 1	(integer encoding)
+#
+
+#
+#	Include compatibility dictionary for older users file. Move this
+#	directive to the end of the file if you want to see the old names
+#	in the logfiles too.
+#
+
+#
+#	Following are the proper new names. Use these.
+#
+ATTRIBUTE	User-Name		1	string
+ATTRIBUTE	User-Password		2	string
+ATTRIBUTE	CHAP-Challenge		3	string
+ATTRIBUTE	CHAP-Password		4	octets
+ATTRIBUTE	User-Mac			5   string	
+

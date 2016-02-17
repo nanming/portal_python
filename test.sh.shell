@@ -1,0 +1,6 @@
+#!/bin/sh
+
+
+echo "hello radius"
+echo "----------------------"
+exit 1
